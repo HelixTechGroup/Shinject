@@ -83,9 +83,9 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-        dotnet clean .\src\Ninject\Ninject.csproj
-        dotnet restore .\src\Ninject\Ninject.csproj
-        dotnet build .\src\Ninject\Ninject.csproj
+        dotnet clean ./src/Ninject/Ninject.csproj
+        dotnet restore ./src/Ninject/Ninject.csproj
+        dotnet build ./src/Ninject/Ninject.csproj
         exit 1
 
     - name: Perform CodeQL Analysis
