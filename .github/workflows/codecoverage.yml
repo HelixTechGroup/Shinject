@@ -34,7 +34,7 @@ jobs:
              run_id: context.payload.workflow_run.id,
           });
           let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-            return artifact.name == "results"
+            return artifact.name == "coverage"
           })[0];
           let download = await github.rest.actions.downloadArtifact({
              owner: context.repo.owner,
@@ -45,7 +45,7 @@ jobs:
           let fs = require('fs');
           fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
     - name: 'Unzip artifact'
-      run: unzip results.zip
+      run: unzip coverage.zip
     - name: Code Coverage Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       with:
