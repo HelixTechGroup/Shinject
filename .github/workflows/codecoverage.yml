@@ -1,4 +1,4 @@
-name: tests
+name: Code Coverage Report
 on: ## [workflow_call]  # allow this workflow to be called from other workflows
   workflow_run:
     workflows: [.Net CI - Windows]
@@ -45,7 +45,7 @@ jobs:
              archive_format: 'zip',
           });
           let fs = require('fs');
-          fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/pr_number.zip`, Buffer.from(download.data));
+          fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/coverage.zip`, Buffer.from(download.data));
     - name: 'Unzip artifact'
       run: unzip coverage.zip
     - name: Code Coverage Report
