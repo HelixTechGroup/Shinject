@@ -1,0 +1,39 @@
+﻿using Shinject.Tests.Integration.EnumerableDependenciesTests.Fakes;
+
+namespace Shinject.Tests.Integration.EnumerableDependenciesTests
+{
+    using FluentAssertions;
+    using Shinject.Tests.Integration.EnumerableDependenciesTests.Fakes;
+    using System.Collections.Generic;
+    using Xunit;
+
+    public class WhenServiceRequestsConstrainedListOfDependencies : ConstrainedDependenciesContext
+    {
+        [Fact]
+        public void ServiceIsInjectedWithAllDependenciesThatMatchTheConstraint()
+        {
+            this.Kernel.Bind<IParent>().To<RequestsConstrainedList>();
+            this.Kernel.Bind<IChild>().To<ChildA>().Named("joe");
+            this.Kernel.Bind<IChild>().To<ChildB>().Named("bob");
+
+            var parent = this.Kernel.Get<IParent>();
+
+            VerifyInjection(parent);
+            parent.Children.Should().BeOfType<List<IChild>>();
+        }
+
+        [Fact]
+        public void WhenNoMatchingBindingExistsEmptyEnumerableIsInjected()
+        {
+            this.Kernel.Bind<IParent>().To<RequestsConstrainedList>();
+            this.Kernel.Bind<IChild>().To<ChildA>().Named("joe");
+            this.Kernel.Bind<IChild>().To<ChildB>().Named("ian");
+
+            var parent = this.Kernel.Get<IParent>();
+
+            parent.Should().NotBeNull();
+            parent.Children.Should().BeOfType<List<IChild>>();
+            parent.Children.Count.Should().Be(0);
+        }
+    }
+}

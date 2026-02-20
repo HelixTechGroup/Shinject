@@ -1,0 +1,89 @@
+﻿<Project Sdk="Prometheus.MSBuild.Sdk">
+  <PropertyGroup>
+    <UseGitHub>True</UseGitHub>
+    <IsLibraryProject>true</IsLibraryProject>
+    <ProductName>Shinject</ProductName>
+    <Authors>Shinject Project Contributors</Authors>
+    <ProductVersion>5.0.0-beta.2</ProductVersion>
+    <UseDefaultFramework>False</UseDefaultFramework>
+    <UseDefaultMultiFramework>True</UseDefaultMultiFramework>
+    <!--net48;netstandard2.0;-->
+    <TargetPlatforms>
+      net10.0;
+      net8.0;
+      netstandard2.1;
+      net48;
+    </TargetPlatforms>
+    <Product>Shinject: Lightweight dependency injection for .NET</Product>
+    <Description>Shinject is a lightning-fast, ultra-lightweight dependency injector for .NET applications.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyOriginatorKeyFile>..\Ninject.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageTags>IoC;DI;Ninject;Shinject</PackageTags>
+    <PackageReleaseNotes>https://github.com/HelixTechGroup/Shinject/blob/master/CHANGELOG.md</PackageReleaseNotes>
+    <PackageIconUrl>https://github.com/HelixTechGroup/Shinject/raw/master/logos/Ninject-Logo32.png</PackageIconUrl>
+    <!--<PackageLicenseUrl>https://github.com/HelixTechGroup/Shinject/raw/master/LICENSE.txt</PackageLicenseUrl>-->
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <!--<IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <NoWarn>$(NoWarn);CS0618</NoWarn>
+    <DebugType>pdbonly</DebugType>-->
+    <langVersion>latest</langVersion>
+    <ForcePack>true</ForcePack>
+  </PropertyGroup>
+
+  <!--<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+  </PropertyGroup>-->
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>-->
+    <!--<PackageReference Include="Nerdbank.GitVersioning" Version="3.7.70-alpha">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>-->
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetPlatform)' == 'netstandard2.0'&#xD;&#xA;      OR '$(TargetPlatform)' == 'netstandard2.1'">
+    <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.7.0" />
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Selection\Routing\" />
+  </ItemGroup>
+
+  <!--<PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'
+      OR '$(TargetFramework)' == 'netstandard2.1'
+      OR '$(TargetFramework)' == 'net8.0'
+      OR '$(TargetFramework)' == 'net10.0'">
+    <DefineConstants>$(DefineConstants);NO_REMOTING;NO_ASSEMBLY_SCANNING</DefineConstants>
+  </PropertyGroup>-->
+
+  <PropertyGroup Condition=" '$(TargetPlatform)' != 'net48'">
+    <DefineConstants>$(DefineConstants);NO_REMOTING;NO_ASSEMBLY_SCANNING</DefineConstants>
+  </PropertyGroup>
+   
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Runtime.Remoting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Shin.Framework" Version="0.2.0-beta.1" />
+  </ItemGroup>
+</Project>

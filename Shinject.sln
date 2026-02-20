@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E299B94-5F07-49DE-8226-55EDC56F13E3}"
+	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
+		CHANGELOG.md = CHANGELOG.md
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		README.md = README.md
+		version.json = version.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shinject", "src\Shinject\Shinject.csproj", "{25A6D723-B248-4168-BB2B-50FBD29209A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shinject.Tests", "src\Shinject.Tests\Shinject.Tests.csproj", "{B53AF472-7F44-4AC7-9F00-98E9EB264768}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shinject.Tests.TestAssembly", "src\Shinject.Tests.TestAssembly\Shinject.Tests.TestAssembly.csproj", "{339DD924-374A-4221-8671-BE951AD280F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shinject.Tests.TestModule", "src\Shinject.Tests.TestModule\Shinject.Tests.TestModule.csproj", "{3D6710B4-726A-44B2-A4A2-CCF3882FC611}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shinject.Benchmarks", "src\Shinject.Benchmarks\Shinject.Benchmarks.csproj", "{78AA0240-EAAE-4D63-83C7-01E2BF702B8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25A6D723-B248-4168-BB2B-50FBD29209A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A6D723-B248-4168-BB2B-50FBD29209A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A6D723-B248-4168-BB2B-50FBD29209A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25A6D723-B248-4168-BB2B-50FBD29209A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B53AF472-7F44-4AC7-9F00-98E9EB264768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B53AF472-7F44-4AC7-9F00-98E9EB264768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B53AF472-7F44-4AC7-9F00-98E9EB264768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B53AF472-7F44-4AC7-9F00-98E9EB264768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339DD924-374A-4221-8671-BE951AD280F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339DD924-374A-4221-8671-BE951AD280F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339DD924-374A-4221-8671-BE951AD280F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339DD924-374A-4221-8671-BE951AD280F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6710B4-726A-44B2-A4A2-CCF3882FC611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6710B4-726A-44B2-A4A2-CCF3882FC611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6710B4-726A-44B2-A4A2-CCF3882FC611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6710B4-726A-44B2-A4A2-CCF3882FC611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78AA0240-EAAE-4D63-83C7-01E2BF702B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78AA0240-EAAE-4D63-83C7-01E2BF702B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78AA0240-EAAE-4D63-83C7-01E2BF702B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78AA0240-EAAE-4D63-83C7-01E2BF702B8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ADBE774-C99E-45D1-B416-A9D66AB97C82}
+	EndGlobalSection
+EndGlobal

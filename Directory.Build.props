@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <UseGitHub>True</UseGitHub>
+    <ProductName>Shinject</ProductName>
+    <CompanyName>HelixTechGroup,llc</CompanyName>
+    <AuthorName>Bryan M. Longacre</AuthorName>
+    <Description>Shinject</Description>
+    <CopyrightStartYear>2024</CopyrightStartYear>
+    <RepositoryHttpUrl>https://github.com/HelixTechGroup/Shinject</RepositoryHttpUrl>
+    <SectionSymbol>@</SectionSymbol>
+    <LocalNugetRepoDirectory>D:\Users\Bryan\Documents\Projects\HelixTechGroup\local-nuget</LocalNugetRepoDirectory>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+</Project>

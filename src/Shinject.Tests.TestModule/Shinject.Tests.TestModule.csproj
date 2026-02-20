@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetPlatforms>
+      net48;
+      netstandard2.1;
+      net8.0;
+      net10.0;
+    </TargetPlatforms>
+    <TargetFrameworks>
+      net48;
+      netstandard2.1;
+      net6.0;
+      net8.0;
+      net10.0;
+    </TargetFrameworks>
+    <TargetPlaform></TargetPlaform>
+    <UseDefaultFramework></UseDefaultFramework>
+    <UseDefaultMultiFramework></UseDefaultMultiFramework>
+    <AssemblyName>Ninject.Tests.TestModule</AssemblyName>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shinject\Shinject.csproj" />
+  </ItemGroup>
+
+</Project>

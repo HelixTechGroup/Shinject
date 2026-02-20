@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--<OutputType>Exe</OutputType>-->
+    <ProductName>Shinject.Benchmark</ProductName>
+    <ProductVersion>0.0.1</ProductVersion>
+    <TargetFrameworks>
+      net48;
+      netstandard2.1;
+      net8.0;
+      net10.0;
+    </TargetFrameworks>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Ninject.snk</AssemblyOriginatorKeyFile>
+    <NoWarn>$(NoWarn);CS0618</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BenchmarkDotNet.Artifacts\**" />
+    <EmbeddedResource Remove="BenchmarkDotNet.Artifacts\**" />
+    <None Remove="BenchmarkDotNet.Artifacts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ninject.Tests\Ninject.Tests.csproj" />
+    <ProjectReference Include="..\Ninject\Ninject.csproj" />
+  </ItemGroup>
+
+</Project>

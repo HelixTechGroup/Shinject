@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetPlatforms>
+      net48;
+      netstandard2.1;
+      net8.0;
+      net10.0;
+    </TargetPlatforms>
+    <TargetFrameworks>
+      net48;
+      netstandard2.1;
+      net6.0;
+      net8.0;
+      net10.0;
+    </TargetFrameworks>
+    <TargetPlaform></TargetPlaform>
+    <UseDefaultFramework></UseDefaultFramework>
+    <UseDefaultMultiFramework></UseDefaultMultiFramework>
+    
+    <IsPackable>false</IsPackable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Ninject.snk</AssemblyOriginatorKeyFile>
+    <NoWarn>$(NoWarn);CS0618</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="TestModules\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="7.0.0-alpha.4" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="xunit" Version="2.8.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shinject.Tests.TestAssembly\Shinject.Tests.TestAssembly.csproj" />
+    <ProjectReference Include="..\Shinject.Tests.TestModule\Shinject.Tests.TestModule.csproj" />
+    <ProjectReference Include="..\Shinject\Shinject.csproj" />
+  </ItemGroup>
+
+</Project>
